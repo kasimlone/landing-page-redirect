@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0f1419" />
   <title>Project Moved — kasimlone.co.uk</title>
   <meta name="description" content="This project has moved. You can now find it at kasimlone.co.uk." />
-  <meta http-equiv="refresh" content="8;url=https://www.kasimlone.co.uk" />
+  <meta http-equiv="refresh" content="15;url=https://www.kasimlone.co.uk" />
   <link rel="preconnect" href="https://www.kasimlone.co.uk" />
   <style>
     :root {
@@ -198,9 +198,20 @@
     </div>
 
     <div class="statusbar">
-      <span><span class="live">●</span> redirecting in 8s</span>
+      <span><span class="live">●</span> redirecting in <span id="countdown">15</span>s</span>
       <span>UTF-8 · TypeScript</span>
     </div>
   </main>
+  <script>
+    (function () {
+      var el = document.getElementById('countdown');
+      var n = 15;
+      var id = setInterval(function () {
+        n -= 1;
+        if (el) el.textContent = n;
+        if (n <= 0) clearInterval(id);
+      }, 1000);
+    })();
+  </script>
 </body>
 </html>
